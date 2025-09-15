@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { AiDetector } from "@/detector/detect";
 export async function GET() {
-	AiDetector("salut");
-	return NextResponse.json({ message: "Well received (GET)" });
+  AiDetector("salut");
+  return NextResponse.json({ message: "Well received (GET)" });
 }
 
 export async function POST(req: Request) {

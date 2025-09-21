@@ -23,7 +23,15 @@ export function csvToData() : Map <string,number>{
 	return dic;
 }
 function scoreWeight(input : string, dic : Map<string,number>) : number {
-    return 0;
+    let total = 0;
+    let count = 0;
+    for(const word of input.split(" ")){
+        if(dic.has(word)){
+            total += dic.get(word)!;
+            count ++;
+        }
+    } 
+    return (total === 0 ? 0 : count/total);
 }
 function cleanInput(input : string) : string {
     input = input.toLowerCase();
@@ -33,9 +41,9 @@ function cleanInput(input : string) : string {
 export function AiDetector( input : string) : boolean {
 	input = input.toString();
     let clnStr = cleanInput(input);
-	let map = csvToData();
-    console.log(clnStr);
-    console.log("ZXXXZXCSSFSFF")
+	let dic = csvToData();
+    let score = scoreWeight(clnStr, dic);
+    console.log("La phrase a obtenu un score de ",score);
 	return true;
 
 }

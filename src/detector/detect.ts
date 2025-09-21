@@ -19,13 +19,23 @@ export function csvToData() : Map <string,number>{
 		const word = parts[2];
 		dic.set(word,freq);
 	}
-	console.log(dic);
+	//console.log(dic);
 	return dic;
 }
-
+function scoreWeight(input : string, dic : Map<string,number>) : number {
+    return 0;
+}
+function cleanInput(input : string) : string {
+    input = input.toLowerCase();
+    input = input.replace(/[^a-zàâçéèêëîïôûùüÿñæœ\s']/gi, "");
+    return input.trim(); 
+}
 export function AiDetector( input : string) : boolean {
-	input;
-	csvToData();
+	input = input.toString();
+    let clnStr = cleanInput(input);
+	let map = csvToData();
+    console.log(clnStr);
+    console.log("ZXXXZXCSSFSFF")
 	return true;
 
 }

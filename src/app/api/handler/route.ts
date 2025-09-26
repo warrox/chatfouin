@@ -11,6 +11,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
     const body = await req.text(); 
-    return NextResponse.json({message : AiDetector(body)})
-    return NextResponse.json({ message: "Well received (POST)", data: body });
+    console.log(JSON.parse(body));
+    const t = JSON.parse(body);
+    return NextResponse.json({message : await AiDetector(t.text)})
 }

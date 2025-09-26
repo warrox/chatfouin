@@ -31,6 +31,7 @@ export function csvToData(): Map<string, number> {
 function scoreWeight(input: string, dic: Map<string, number>) {
     let total = 0;
     let count = 0;
+    let size = input.length;  
     let wordInDetect = new Map<string, number>();
     for (const word of input.split(/\s+/)) {
         if (dic.has(word)) {
@@ -40,7 +41,9 @@ function scoreWeight(input: string, dic: Map<string, number>) {
             count++;
         }
     }
-    const score = total === 0 ? 0 : count / total;
+    if(size < 100)
+        return { score : 1, wordInDetect};
+    const score = total === 1 ? 0 : count / total;
     return { score, wordInDetect };
 }
 
@@ -85,17 +88,16 @@ function humanScore(words: string[], dic: Map<string, number>): number {
 //  Fonction principale
 // --------------------------------------------
 export async function AiDetector(input: string){
-    input = input.toString();
+    console.log("XXXXX" + input);
+    // input = input.toString();
     const clnStr = cleanInput(input);
     const dic = csvToData();
     const obj = scoreWeight(clnStr, dic);
-
+    
     const wordsArray = Array.from(obj.wordInDetect.entries()).map(([word, score]) => ({ word, score }));
     const wordsList = clnStr.split(/\s+/).filter(w => w.length > 0);
     const hScore = humanScore(wordsList, dic);
-
     const origin = obj.score < 0.00001 ? "Phrase originale IA : " : "Phrase originale Humaine : ";
-
     const prompt = JSON.stringify({
         words: wordsArray,
         original: origin + clnStr,

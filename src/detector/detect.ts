@@ -88,8 +88,6 @@ function humanScore(words: string[], dic: Map<string, number>): number {
 //  Fonction principale
 // --------------------------------------------
 export async function AiDetector(input: string){
-    console.log("XXXXX" + input);
-    // input = input.toString();
     const clnStr = cleanInput(input);
     const dic = csvToData();
     const obj = scoreWeight(clnStr, dic);
@@ -97,6 +95,7 @@ export async function AiDetector(input: string){
     const wordsArray = Array.from(obj.wordInDetect.entries()).map(([word, score]) => ({ word, score }));
     const wordsList = clnStr.split(/\s+/).filter(w => w.length > 0);
     const hScore = humanScore(wordsList, dic);
+    console.log("obj score : ", obj.score);
     const origin = obj.score < 0.00001 ? "Phrase originale IA : " : "Phrase originale Humaine : ";
     const prompt = JSON.stringify({
         words: wordsArray,
@@ -123,6 +122,7 @@ export async function AiDetector(input: string){
             response = content as string;
         }
     }
+    console.log(wordsArray)
     console.log(response)
     return response;
 }

@@ -4,12 +4,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import {TrophySpin } from "react-loading-indicators"
-
+import logo from '../kyo.png'
 export default function Home() {
 	const [ text, setText] = useState("");
     const [loading, setLoading] = useState(false);
     const [result, setResult ] = useState<string | null> (null);
-
+    console.log(logo);
     async function handleAnalyze() {
         if (!text.trim()) return;
         setLoading(true);
@@ -35,7 +35,12 @@ export default function Home() {
     }
     return (
 		<main className="flex flex-col justify-center items-center min-h-screen p-8 bg-linear-to-tl from-indigo-400 to-blue-900 ">
-			<div className="w-full max-w-md  p-6 rounded-2xl shadow-2xl bg-[var(--cream)]">
+            <h1 className="header-font text-7xl font-bold text-yellow-50 mb-4 text-center"> 
+                Chatfouin </h1>
+            <div className="mb-6 flex justify-center">
+                <Image src={logo} alt="Logo" width={150} height={150}/>
+                </div>
+            <div className="w-full max-w-md  p-6 rounded-2xl shadow-2xl bg-[var(--cream)]">
 				<h1 className="text-2xl font-bold text-zinc-600 mb-4 text-center ">
 					Analyse de détection de texte IA
 				</h1>

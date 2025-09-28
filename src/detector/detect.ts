@@ -31,8 +31,8 @@ export function csvToData(): Map<string, number> {
 function scoreWeight(input: string, dic: Map<string, number>) {
     let total = 0;
     let count = 0;
-    let size = input.length;  
-    let wordInDetect = new Map<string, number>();
+    const  size = input.length;  
+    const wordInDetect = new Map<string, number>();
     for (const word of input.split(/\s+/)) {
         if (dic.has(word)) {
             const val = dic.get(word)!;
@@ -103,7 +103,7 @@ export async function AiDetector(input: string){
         humanScore: hScore
     });
 
-    let conversation = await client.beta.conversations.start({
+    const conversation = await client.beta.conversations.start({
     agentId: "ag:ed5a92aa:20250924:aidetector:6f1d059e",
     inputs: prompt,
     });

@@ -6,12 +6,8 @@ Ce projet utilise le modèle **[`mistral-large-latest`](https://docs.mistral.ai/
 Pour l'utiliser : [Chatfouin](https://chatfouin.vercel.app/)
 ---
 
-## 🚀 Fonctionnalités
 
-- 🔍 **Détection IA/Humain** : Analyse un texte et estime s’il a été généré par une IA ou écrit par une personne réelle.  
-- ⚡ **Temps réel** : Résultats rapides grâce à l’intégration du modèle LLM.  
-- 🎨 **Interface moderne** : UI réactive et responsive avec **React + Tailwind CSS** (si utilisé).  
-- 🌐 **Architecture Next.js** : Rendu côté serveur (SSR) et optimisation des performances.
+## 🔍 **Détection IA/Humain** : Analyse un texte et estime s’il a été généré par une IA ou écrit par une personne réelle.  
 
 ---
 

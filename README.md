@@ -1,4 +1,5 @@
-# 🕵️‍♂️ Chatfouin
+![Chatfouin Banner](public/chatfouin-banner.png)
+
 
 Chatfouin est un **détecteur de texte IA** qui permet d’identifier si un texte a été rédigé par un **humain** ou par une **intelligence artificielle**.  
 Ce projet utilise le modèle **[`mistral-large-latest`](https://docs.mistral.ai/)** pour l’analyse et est développé avec **Next.js**, **React** et **TypeScript**.

@@ -1,4 +1,4 @@
-![Chatfouin Banner](public/chatfouin-banner.png)
+z![Chatfouin Banner](ChatGPT Image 28 sept. 2025, 11_19_37.png)
 
 
 Chatfouin est un **détecteur de texte IA** qui permet d’identifier si un texte a été rédigé par un **humain** ou par une **intelligence artificielle**.  

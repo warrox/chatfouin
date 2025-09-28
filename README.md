@@ -29,5 +29,5 @@ Pour l'utiliser : [Chatfouin](https://chatfouin.vercel.app/)
 
 Clone le projet :  
 ```bash
-git clone https://github.com/<ton-username>/chatfouin.git
+git clone https://github.com/warrox/chatfouin.git
 cd chatfouin
